@@ -1,0 +1,32 @@
+.button {
+  display: inline-block;
+  padding: calc(.5 * var(--flow-space)) calc(2.5 * var(--flow-space));
+  font-size: 2em;
+  font-weight: map-get($text-font-weight, bold);
+  white-space: nowrap;
+  text-decoration: none;
+  border-radius: $default-radius;
+
+  &--primary {
+    @include button-bg($secondary-color, $white);
+  }
+
+  .header & {
+    position: absolute;
+    bottom: calc(2 * var(--flow-space));
+    left: 50%;
+    opacity: var(--logo-opacity);
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  .header--show & {
+    pointer-events: auto;
+  }
+
+  .main & {
+    position: absolute;
+    top: var(--flow-space);
+    right: var(--grid-column);
+  }
+}

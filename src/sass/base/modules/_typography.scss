@@ -1,0 +1,175 @@
+//- Basic typography style
+html {
+  font: map-get($text-font-weight, normal) 62.5% / #{map-get($text-font-height, generic)} $text-font-stack; //- 62.5% makes 'em' unit computed as 10px; 125% makes 'em' units computed as 20px;
+}
+
+body {
+  color: $text-color;
+}
+
+//- Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $title-font-stack;
+  font-weight: map-get($text-font-weight, normal);
+  line-height: map-get($text-font-height, heading);
+  color: $primary-color;
+}
+
+h1 {
+  margin-block-start: var(--flow-space);
+  margin-block-end: var(--flow-space);
+  padding-block-start: var(--flow-space);
+  padding-block-end: var(--flow-space);
+  border-top: 1px solid $primary-color;
+  border-bottom: 1px solid $primary-color;
+
+  @include media('<=mobile') {
+    font-size: map-get($heading-font-1, small);
+  }
+
+  @include media('>mobile', '<=laptop') {
+    font-size: map-get($heading-font-1, medium);
+  }
+
+  @include media('>laptop') {
+    font-size: map-get($heading-font-1, large);
+  }
+}
+
+h2 {
+  --flow-space: 1.072em;
+
+  margin-block-end: var(--flow-space);
+
+  @include media('<=mobile') {
+    font-size: map-get($heading-font-2, small);
+  }
+
+  @include media('>mobile', '<=laptop') {
+    font-size: map-get($heading-font-2, medium);
+  }
+
+  @include media('>laptop') {
+    font-size: map-get($heading-font-2, large);    
+  }
+}
+
+h3 {
+  --flow-space: 2.3em;
+  margin-block-start: var(--flow-space);
+
+  @include media('<=mobile') {
+    font-size: map-get($heading-font-3, small);
+  }
+
+  @include media('>mobile', '<=laptop') {
+    font-size: map-get($heading-font-3, medium);
+  }
+
+  @include media('>laptop') {
+    font-size: map-get($heading-font-3, large);    
+  }
+}
+
+h4 {
+  font-size: $heading-font-4;
+}
+
+h5 {
+  font-size: $heading-font-5;
+}
+
+h6 {
+  font-size: $heading-font-6;
+}
+
+p {
+  --flow-space: 1em;
+
+  & + #{&} {
+    margin-block-start: var(--flow-space);
+  }
+  
+  @include media('<=mobile') {
+    font-size: map-get($parragraph-font, small)
+  }
+
+  @include media('>mobile', '<=laptop') {
+    font-size: map-get($parragraph-font, medium)
+  }
+
+  @include media('>laptop') {
+    font-size: map-get($parragraph-font, large)
+  }
+
+  b,
+  strong {
+    padding-inline-start: $default-radius;
+    padding-inline-end: $default-radius;
+    padding-block-end: $default-radius * 2;
+    font-size: inherit;
+    font-weight: map-get($text-font-weight, normal);
+    background-color: transparentize($secondary-color, .9);
+    color: $primary-color;
+    border-radius: $default-radius;
+
+    &::-moz-selection {
+      color: $text-color;
+      background: transparentize($tertiary-color, .25);
+    }
+    
+    &::selection {
+      color: $text-color;
+      background: transparentize($tertiary-color, .25);
+    }
+  }
+
+  mark {
+    --flow-space: 1.467em;
+
+    position: relative;
+    display: block;
+    margin-block-start: var(--flow-space);
+    margin-block-end: var(--flow-space);
+    padding-block-start: var(--flow-space);
+    padding-inline-end: var(--grid-column);
+    padding-block-end: var(--flow-space);
+    font-family: $title-font-stack;
+    font-size: var(--mark-font-size, 1.42em);
+    background-color: transparent;
+    color: $primary-color;
+    border-top: 1px solid $primary-color;
+    border-bottom: 1px solid $primary-color;
+
+    &::before,
+    &::after {
+      --flow-space: 1em;
+
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      display: block;
+      font-size: 1rem;
+    }
+
+    &::before {
+      top: var(--flow-space);
+      border-top: 2px solid $primary-color;
+    }
+
+    &::after {
+      bottom: var(--flow-space);
+      border-bottom: 2px solid $primary-color;
+    }
+  }
+}
+
+ul {
+  font-size: $list-font;
+}

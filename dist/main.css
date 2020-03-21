@@ -1,0 +1,17 @@
+/* Error: (small: 1.8em, medium: 2.2em, large: 2.2em) isn't a valid CSS value.
+ *    ,
+ * 63 |   font-size: $heading-font-3;
+ *    |              ^^^^^^^^^^^^^^^
+ *    '
+ *   src/sass/base/modules/_typography.scss 63:14  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: (small: 1.8em, medium: 2.2em, large: 2.2em) isn't a valid CSS value.\a    \2577 \a 63 \2502    font-size: $heading-font-3;\a    \2502               ^^^^^^^^^^^^^^^\a    \2575 \a   src/sass/base/modules/_typography.scss 63:14  root stylesheet";
+}

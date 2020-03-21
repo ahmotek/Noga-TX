@@ -1,0 +1,56 @@
+//- DOM basic styles
+::-moz-selection {
+  background: transparentize($tertiary-color, .75);
+}
+::selection {
+  background: transparentize($tertiary-color, .75);
+}
+
+/**
+ * body set to fill in the viewport and smooth scrolling
+ */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+/**
+ * Basic link styles
+ */
+a {
+  color: $anchor-color;
+  text-decoration: none; 
+
+  &:not([class]) {
+    text-decoration-skip-ink: auto; /* better underline resdering */
+  }
+
+  @include on-event {
+    color: $text-color;
+    text-decoration: underline;
+  }
+
+  @include media('>=350px', '<tablet', 'retina3x') {
+
+  }
+
+  @include media('hover') {
+    cursor: pointer; 
+  }
+}
+
+/**
+ * Basic images styles
+ */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/**
+ * Axiomatic CSS and Lobotonized Owls for flows
+ * https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/
+ */
+article > * + * {
+  margin-top: $flow-space * 1.5;
+}

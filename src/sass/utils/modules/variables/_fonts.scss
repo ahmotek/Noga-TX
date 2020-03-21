@@ -1,0 +1,44 @@
+//- Fonts variables
+
+//- Regular font family
+/// @type List
+$title-font-stack: 'Roboto Slab', Georgia, Times, 'Times New Roman', serif !default;
+$text-font-stack: 'Barlow', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+$text-font-weight: (
+  normal: 500,
+  bold: 700
+);
+
+$text-font-height: (
+  generic: 1.6,
+  heading: 1.4
+);
+
+
+//- Set heading font-size
+$heading-font-1 : (
+  small: 2.6em,
+  medium: 3em,
+  large: 3.4em
+);
+$heading-font-2: (
+  small: 2.2em,
+  medium: 2.6em,
+  large: 2.8em
+);
+$heading-font-3: (
+  small: 1.8em,
+  medium: 2.2em,
+  large: 2.2em
+);
+$heading-font-4: 1.5em;
+$heading-font-5: 1.25em;
+$heading-font-6: 1em;
+
+$parragraph-font: (
+  small: 2em,
+  medium: 2.2em,
+  large: 2.4em
+);
+
+$list-font: 1.4em;

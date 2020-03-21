@@ -1,0 +1,9 @@
+@charset 'UTF-8';
+@import 'utils/modules'; //- Utility layer - global mixins, functions, helper selectors, etc
+@import 'vendors/modules'; //- Vendors - 3rd-party styles, mixins, etc.
+@import 'base/modules'; //- Base - global styles, such as resets, colors, animations, base, typography, and utilies.
+@import 'layout/modules'; //- Layout - styling for larger layout components; e.g. nav, header, footer, grid.
+@import 'components/modules'; //- Components - each self-contained component in its own partial
+@import 'pages/modules'; //- Specific Page Styling (if needed)
+// @import 'themes/themes'; //- Themes styling
+ 

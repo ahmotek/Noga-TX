@@ -1,0 +1,19 @@
+//- Global variables
+$main-direction: rtl;
+$secondary-direction: ltr;
+
+//- Assets URL
+/// @type String
+$base-url: '../assets/' !default;
+$image-url: '../assets/images/' !default; 
+$video-url: '../assets/videos/' !default; 
+$font-url: '../assets/fonts/' !default;  
+
+//- Flow Sapce - https://24ways.org/2018/managing-flow-and-rhythm-with-css-custom-properties/
+$flow-space: 1em;
+
+$default-radius: 2px;
+
+//- Z-Indexs'
+$low-background-index: 0;
+$video-index: -2;

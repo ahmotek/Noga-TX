@@ -1,0 +1,18 @@
+//- This is the main template of the website
+//- It will hold all global page elements - head, header, footer
+doctype html
+html(lang="en")
+  include html/includes/head
+    
+  body
+    .app
+      block header
+        include html/includes/header
+
+      block content
+
+    block svg
+      include html/includes/svg
+
+    //- block footer
+      include html/includes/footer

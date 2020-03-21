@@ -1,0 +1,30 @@
+@mixin button-bg($background, $color, $outline-color: $tertiary-color, $animation: true) {
+  background-color: $background;
+  color: $color;
+
+  &:hover {
+    @include media("hover") {
+      background-color: darken($background, 10%);
+    }
+  }
+
+  &:active {
+    background-color: darken($background, 20%);
+  }
+
+  &:focus {
+    box-shadow: 0 0 4px transparentize($outline-color, .1);
+    outline: 2px solid transparentize($outline-color, .1);
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: $color;
+    text-decoration: none;
+  }
+
+  @if $animation {
+    transition: background-color 200ms ease-in-out;
+  }
+}

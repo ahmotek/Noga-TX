@@ -1,0 +1,13 @@
+:root {
+  --grid-column: 8.33vw;
+  --start-position: -16.66vw; // calc(2 * var(--grid-column))
+  --logo-column: calc(3 * var(--grid-column)); // 24.99vw
+  --main-column: calc(7 * var(--grid-column));  // 58.31vw
+
+  --header-top-height: 30.1vh;
+  --header-bottom-height: 70.1vh;
+
+  --flow-space: 1em;
+
+  --section-space: 5em; // 50px / 10px = 5em
+}

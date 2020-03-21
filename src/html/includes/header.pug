@@ -1,0 +1,11 @@
+- var pageTitle = 'Noga Therapeutics';
+- var contactButtonText = 'Contact Us';
+
+header#header.header
+  .header__logo-container
+    svg.logo.logo--header
+      title #{pageTitle} logo
+      use(xlink:href="#nogaLogo")
+
+  .header__space-container
+    a.button.button--primary(href="mailto:info@noga-tx.com") #{contactButtonText}

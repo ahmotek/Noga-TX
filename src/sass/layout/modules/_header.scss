@@ -1,0 +1,30 @@
+.header {
+  --logo-opacity: 0;
+
+  grid-area: header;
+  transform: translateX(var(--start-position));
+  transition: transform ease-in-out;
+
+  &__logo-container,
+  &__space-container {
+    position: sticky;
+    width: 100%;
+  }
+  
+  &__logo-container {
+    top: 0;
+    height: var(--header-top-height);
+    background-color: $secondary-color;
+    color: $white;
+  }
+  
+  &__space-container {
+    top: var(--header-top-height);
+    height: var(--header-bottom-height);
+    background-color: $primary-color;
+  }
+
+  &--show {
+    --logo-opacity: 1;
+  }
+}

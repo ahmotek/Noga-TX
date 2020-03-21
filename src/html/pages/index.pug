@@ -1,0 +1,103 @@
+extends ../../layout
+
+block content
+  - var pageTitle = 'Noga Therapeutics';
+  - var contactButtonText = 'Contact Us';
+
+  main#main.main
+    a.button.button--primary(href="mailto:info@noga-tx.com") #{contactButtonText}
+
+    svg.logo.logo--main
+      title #{pageTitle} logo
+      use(xlink:href="#nogaLogo")
+
+    section.main__section
+      h1 Developing Gene Therapies
+        br
+        | to transform the life of patients
+        br
+        | and their families.
+
+      p #{pageTitle} was established in 2019 in memory 
+        br
+        | of Noga Baumatz with a mission to develop gene therapies 
+        br
+        | for Primary Immune Deficiencies (PID).
+
+    section.main__section
+      h2 The Need
+
+      p There are over 300 recognized Primary Immune Deficiencies. About 1 in 500 people in the United States are born with a primary immune deficiency.
+
+      p In the past decade, gene therapies have shown encouraging results in several PIDs. #[b However, most remain without effective treatment options.] 
+
+    section.main__section
+      h2 Technology
+
+      p Lentiviral autologous gene therapy to date, 11 years after the first Adenosine Deaminase Deficiency patient was treated, more than 200 patients with Primary Immune Deficiencies have been treated with lentiviral vectors #[b with no reports of major adverse events] or insertion mutagenesis. 
+
+      p #[mark We develop lentiviral vectors that are computationally and experimentally tailored for each indication.]
+
+    section.main__section
+      h2 R&amp;D
+
+      p Noga Tx is currently developing a lentiviral vector for our lead indication. #[b This project is done in collaboration with a major Israeli medical center with 30 patients under care.] We aim to reach a compassionate use approval within the next 24 month.
+      p Our pipeline includes two additional PIDs in the evaluation phase.
+
+    section.main__section.main__section--low-contrast
+      p #[b Team of professional scientists] coming from leading institutions and brining industry experience in cell and gene therapy.
+
+      ul.team-list
+        li.team-list__item
+          .team-list__image
+          b Dr. Noam Diamant 
+          br
+          | CEO/CSO
+        
+        li.team-list__item
+          .team-list__image
+          b Noam Baumatz
+          br
+          | Co-founder
+        
+        li.team-list__item
+          .team-list__image
+          b Dr. Liron Elkouby
+          br
+          | Head of Discovery
+
+        li.team-list__item
+          .team-list__image
+          b Dr. Liat Pinkas
+          br
+          | Head of Development
+
+    section.main__section
+      h2 Market
+
+      p Our lead indication is a disease with a high burden and poor treatment options presenting a true unmet need. With over 3000 patients in the Western world alone, the projected market size is 2 Billion USD.
+
+    section.main__section
+      h2 Investors
+
+      p #[b Seed investment was received from Lonza, a global leader in biologics manufacturing and cell &amp; gene therapy.]
+
+      p The investment includes cash and in-kind service for process development in Lonza’s Cocoon#[sup TM] automated cell therapy system and GMP manufacturing of GMP lentiviral vectors for the clinical trial.
+
+    section.main__section
+      h2 Intellectual property
+
+      p Freedom-to-operate for 3rd generation lentiviral vectors combined with proprietary IP of our vector design.
+
+    section.main__section.main__section--low-contrast
+      h2 Value proposition
+
+      p In recent years value creation of lentiviral gene therapy companies was driven by Proof-of-Concept (PoC) studies in few patients.
+
+      h3 Clear efficacy in small trials lead to significant value creation.
+
+      //- section.main__section
+      p #[mark We are currently seeking to partner with additional investors that will take us to a first-in-human trial in Israel.]
+
+    block video
+      include ../includes/video-white

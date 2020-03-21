@@ -1,0 +1,79 @@
+.landing {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: 50% / cover no-repeat url($image-url + 'video-bg.jpg'); 
+  color: $heading-color;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background-color: $secondary-color;
+    mix-blend-mode: multiply;
+    z-index: -1;
+  }
+
+  &__logo {
+    @include fluid-type(width, 320px, 1024px, 120px, 200px);
+    @include fluid-type(height, 320px, 1024px, 80px, 120px);
+    color: $heading-color;
+  }
+
+  &__title {
+    @include fluid-type(font-size, 320px, 1440px, 20px, 46px);
+    margin-block-start: $flow-space * 1.5;
+    margin-block-end: $flow-space / 2;
+    font-weight: map-get($text-font-weight, normal);
+    text-align: center;
+    text-shadow: $heading-shadow;
+
+    small {
+      display: inline-block;
+      margin-block-start: $flow-space;
+      padding-block-start: $flow-space / 2;
+      padding-inline-start: $flow-space * 2;
+      padding-inline-end: $flow-space * 2;
+      border-top: 1px solid rgba(255, 255, 255, .3);
+    }
+  }
+
+  &__button {
+    @include fluid-type(font-size, 320px, 1440px, 16px, 20px);
+    @include fluid-type(border-radius, 320px, 1440px, 2px, 4px);
+    @include button-bg($button-background, $heading-color);
+    padding-block-start: #{$flow-space / 2};
+    padding-block-end: #{$flow-space / 2};
+    padding-inline-start: $flow-space * 1.5;
+    padding-inline-end: $flow-space * 1.5;
+    text-align: center;
+    color: $heading-color;
+
+    @include media('<=mobile', 'tap') {
+      margin-block-end: 3em;
+    }
+
+    &:hover {
+      color: $heading-color;
+      text-decoration: none;
+    }
+  }
+
+  &__video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100vw;
+    min-height: 100vh;
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+}

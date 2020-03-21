@@ -1,0 +1,52 @@
+//// 
+/// Application maximum width
+///
+/// @type Length
+///
+$max-width: 480px !default;
+
+
+////
+/// include-media library public configuration
+/// @author Eduardo Boucas
+/// @access public
+////
+
+///
+/// Creates a list of global breakpoints
+///
+/// @example scss - Creates a single breakpoint with the label `mobile`
+/// $breakpoints: ('mobile': 480px);
+///
+$breakpoints: (
+  'mobile': 640px,
+  'tablet': 768px,
+  'laptop': 1024px,
+  'desktop': 1280px, 
+  'desktop-xlarge': 1440px
+) !default;
+
+///
+/// Creates a list of static expressions or media types
+///
+/// @example scss - Creates a single media type (screen)
+///  $media-expressions: ('screen': 'screen');
+///
+/// @example scss - Creates a static expression with logical disjunction (OR operator)
+///  $media-expressions: (
+///    'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)'
+///  );
+///
+$media-expressions: (
+  'screen': 'screen',
+  'print': 'print',
+  'handheld': 'handheld',
+  'landscape': '(orientation: landscape)',
+  'portrait': '(orientation: portrait)',
+  'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)',
+  'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)',
+  'hover': '(hover: hover) and (pointer: fine)', /* mouse, touch pad */
+  'tap': '(hover: none) and (pointer: coarse)', /* smartphones, touchscreens */
+  'minRation16/9': '(min-aspect-ratio: 16/9)',
+  'maxRation16/9': '(max-aspect-ratio: 16/9)'
+) !default;

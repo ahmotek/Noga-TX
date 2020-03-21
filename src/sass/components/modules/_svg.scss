@@ -1,0 +1,23 @@
+.logo {
+  width: 20em;
+  height: 10em;
+  font-size: var(--logo-font);
+  
+  &--header {
+    --logo-font: .75em;
+
+    position: relative;
+    top: 50%;
+    left: 50%;
+    color: $white;
+    transform: translate(-50%, -50%);
+    opacity: var(--logo-opacity);
+    transition: opacity 250ms ease-in-out;
+  }
+
+  &--main {
+    --logo-font: 1em;
+    
+    color: $primary-color;
+  }
+}

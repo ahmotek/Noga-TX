@@ -1,0 +1,20 @@
+.video {
+  position: fixed;
+  top: 0;
+  left: -10vw;
+  z-index: $video-index;
+
+  @include media('minRation16/9') {
+    width: 110vw;
+    height: auto;
+  }
+
+  @include media('maxRation16/9') {
+    width: auto;
+    height: 110vh; 
+  }
+
+  // @include media('<tablet') {
+  //   display: none;
+  // }
+}
