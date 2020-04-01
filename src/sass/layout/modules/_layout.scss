@@ -1,7 +1,7 @@
 //- Main wrapper partial
 .app {
   display: grid;
-  grid-template-columns: var(--logo-column) var(--grid-column) var(--main-column) var(--grid-column);
+  grid-template-columns: var(--logo-column) var(--empty-column) var(--main-column) var(--empty-column); 
   grid-template-areas: "header . main .";
   width: 100%;
   max-width: map-get($breakpoints, 'desktop-xlarge');
@@ -16,20 +16,24 @@
 
 .main {
   grid-area: main;
-  padding-block-start: var(--header-top-height);
-  padding-inline-start: var(--flow-space);
-  padding-inline-end: var(--flow-space);
+
+  &__aside {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: var(--header-top-height);
+  }
 
   &__section {
     & + #{&} {
-      --flow-space: 5em; 
+      --flow-space: 14rem; 
       margin-block-start: var(--flow-space);
-      padding-block-start: var(--flow-space);
-      padding-block-end: var(--flow-space);
     }
 
     &--low-contrast {
       position: relative;
+      padding-block-start: var(--section-padding);
+      padding-block-end: var(--section-padding);
 
       & > * {
         position: relative;
@@ -42,38 +46,19 @@
         position: absolute;
         top: 0;
         bottom: 0;
-        left: calc(-1 * var(--grid-column) - var(--flow-space));
-        width: calc(var(--main-column) + 2 * var(--grid-column));
+        left: calc(-1 * var(--empty-column));
+        width: calc(var(--main-column) + 2 * var(--empty-column));
         background-color: $low-contrast-background;
+        backdrop-filter: blur(3px);
+        transform: translate3d(0, 0, 1px);
         z-index: $low-background-index;
       }
     }
   }
-}
 
-.team-list {
-  --flow-space: 3.57em; // 30px flow / 14px font-size
-
-  display: flex;
-  justify-content: space-between;
-
-  p + & {
-    margin-block-start: var(--flow-space);
-  }
-
-  &__item {
-    --flow-space: .714em;
-    
-    width: var(--list-item-width, 10em);
-    margin-inline-start: var(--flow-space);
-    margin-inline-end: var(--flow-space);
-    text-align: center;
-  }
-
-  &__image {
-    padding-top: 100%;
-    background-color: transparentize($primary-color, .9);
-    margin-block-end: var(--flow-space);
-    border-radius: 50%;
-  }
+  // .button {
+  //   position: absolute;
+  //   top: var(--flow-space);
+  //   right: var(--grid-column);
+  // }
 }

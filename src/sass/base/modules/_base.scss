@@ -52,5 +52,118 @@ img {
  * https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/
  */
 article > * + * {
-  margin-top: $flow-space * 1.5;
+  margin-top: var(--flow-space);
+}
+
+h1 {
+  margin: var(--flow-space) 0;
+  padding: var(--flow-space) 0;
+  border-top: 1px solid $primary-color;
+  border-bottom: 1px solid $primary-color;
+
+  &::before,
+  &::after {
+    content: '';
+    
+  }
+}
+
+h2 {
+  --flow-space: 4rem;
+  margin-bottom: var(--flow-space);
+}
+
+p {
+  --flow-space: 1rem;
+
+  & + #{&} {
+    margin-block-start: var(--flow-space);
+  }
+}
+
+b,
+strong {
+  padding: 0 $default-radius $default-radius * 2;
+  background-color: transparentize($secondary-color, .9);
+  color: $primary-color;
+  border-radius: $default-radius;
+
+  &::-moz-selection {
+    color: $text-color;
+    background-color: transparentize($tertiary-color, .25);
+  }
+  
+  &::selection {
+    color: $text-color;
+    background-color: transparentize($tertiary-color, .25);
+  }
+}
+
+mark {
+  --flow-space: 6rem;
+
+  position: relative;
+  display: block;
+  margin: var(--flow-space) 0;
+  padding: var(--flow-space) calc(1.5 * var(--grid-column)) var(--flow-space) 0;
+  background-color: transparent;
+  color: $primary-color;
+  border-top: 1px solid $primary-color;
+  border-bottom: 1px solid $primary-color;
+
+  &::before,
+  &::after {
+    --flow-space: 1rem;
+
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: block;
+    font-size: 1rem;
+  }
+
+  &::before {
+    top: var(--flow-space);
+    border-top: 2px solid $primary-color;
+  }
+
+  &::after {
+    bottom: var(--flow-space);
+    border-bottom: 2px solid $primary-color;
+  }
+}
+
+figure {
+  --flow-space: 4rem;
+
+  overflow: hidden;
+  color: $primary-color;
+  border-radius: $default-radius;
+
+  figcaption {
+    --flow-space: 1rem;
+
+    margin-block-start: var(--flow-space); 
+  }
+
+  p + &,
+  & + p {
+    margin-block-start: var(--flow-space);
+  }
+}
+
+ul {
+  --flow-space: 6rem;
+
+  list-style: none;
+
+  p + &,
+  & + p {
+    margin-block-start: var(--flow-space);
+  }
+
+  li {
+    --flow-space: 1rem;
+  }
 }

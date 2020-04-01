@@ -17,7 +17,7 @@ window.addEventListener('scroll', () => {
 function headerAnimation() {
   const scrolled = window.scrollY;
 
-  let animPosition = startPosition + scrolled/50;
+  let animPosition = startPosition + scrolled/44;
 
   if(animPosition <= 0) {
     // console.log('animPosition if = ' + animPosition);

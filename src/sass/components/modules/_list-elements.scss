@@ -1,4 +1,66 @@
-ul {
+.team-list {
   list-style: none;
-  padding-inline-start: 0;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0;
+  font-size: 1.6em;
+
+  p + & {
+    margin-block-start: var(--flow-space);
+  }
+
+  b,
+  strong {
+    font-weight: map-get($text-font-weight, normal);
+    color: $text-color;
+    background-color: transparent;
+  }
+
+  &__item {
+    --flow-space: 0.714em;
+
+    width: var(--list-item-width, 10em);
+    margin-inline-start: var(--flow-space);
+    margin-inline-end: var(--flow-space);
+    text-align: center;
+  }
+
+  &__image {
+    position: relative; 
+    padding-top: 100%;
+    overflow: hidden;
+    background-color: transparentize($primary-color, 0.9);
+    margin-block-end: var(--flow-space);
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px $primary-color;
+    transform: translate3d(0, 0, 1px);
+    // box-shadow: 0 0 0 1px $primary-color, 0 0 0 3px $white, 0 0 0 5px $primary-color;
+
+    img {
+      position: absolute;
+      top: 0;
+    }
+  }
+}
+
+.list {
+  list-style: none;
+  padding-inline-start: 2em;
+
+  &__item {
+    margin-bottom: var(--flow-space);
+
+    &::before {
+      content: '';
+      position: relative;
+      top: -3px;
+      display: inline-block;
+      width: .8rem;
+      height: .8rem;
+      margin-inline-end: 1rem;
+      margin-inline-start: -1em;
+      background-color: $secondary-color;
+      border-radius: 1px;
+    }
+  }
 }

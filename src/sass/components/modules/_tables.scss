@@ -1,0 +1,120 @@
+$bw: 3px;
+$tableColour: slategrey;
+
+.c-table {
+  --flow-space : 3em;
+
+  display: flex;
+  flex-wrap: wrap;
+  margin: var(--flow-space) 0 0;
+  padding: 0;
+
+  position: relative; 
+  top: $bw; 
+  left: $bw; //compensate for border offset
+
+  &--2cols {
+    .c-table-cell {
+      width: 50%;
+    }
+  }
+
+  &--3cols {
+    .c-table-cell {
+      width: 33.33333%;
+    }
+  }
+
+  &--4cols {
+    .c-table-cell {
+      width: 25%;
+    }
+  }
+
+  &--5cols {
+    .c-table-cell {
+      width: 20%;
+    }
+  }
+
+  &--6cols {
+    .c-table-cell {
+      width: 16.66666%;
+    }
+  }
+
+  &--collapse {
+    @include media('<=mobile') {
+      display: block;
+    }
+  }
+}
+
+.c-table-cell {
+  box-sizing: border-box;
+  flex-grow: 1;
+  width: 100%;  // Default to full width
+  padding: 0.8em 1.2em;
+  overflow: hidden; // Or flex might break
+  list-style: none;
+  border: solid $bw white;
+  background-color: transparentize($tableColour, .2);
+
+  margin: -$bw 0 0 -$bw;  //border collapse offset
+
+  @include media('<=mobile') {
+    font-size: map-get($other-fonts, small)
+  }
+
+  @include media('>mobile', '<=laptop') {
+    font-size: map-get($other-fonts, medium)
+  }
+
+  @include media('>laptop') {
+    font-size: map-get($other-fonts, large)
+  }
+
+  &--head {
+    font-size: 1em;
+  }
+
+  & > h1, 
+  & > h2, 
+  & > h3, 
+  & > h4, 
+  & > h5, 
+  & > h6 { margin: 0; }
+
+  &--dark {
+    background-color: $tableColour;
+    border-color: darken($tableColour,10%);
+    color: white; > h1, > h2, > h3, > h4, > h5, > h6 { color: white; }
+  }
+
+  &--medium {
+    background-color: mix(white,$tableColour,50%);
+    border-color: mix(white,$tableColour,40%);
+  }
+
+  &--light {
+    background-color: white;
+    border-color: mix(white,$tableColour,80%);
+  }
+
+  &--highlight {
+    background-color: lightgreen;
+    border-color: darken(lightgreen,10%);
+  }
+
+  &--alert {
+    background-color: darkorange;
+    border-color: darken(darkorange,10%);
+    color: white; > h1, > h2, > h3, > h4, > h5, > h6 { color: white; }
+  }
+
+  .c-table--collapse > & {
+    @include media('<=mobile') {
+      width: 100% !important;
+    }
+  }
+}

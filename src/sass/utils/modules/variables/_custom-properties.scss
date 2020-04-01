@@ -1,13 +1,15 @@
 :root {
   --grid-column: 8.33vw;
-  --start-position: -16.66vw; // calc(2 * var(--grid-column))
-  --logo-column: calc(3 * var(--grid-column)); // 24.99vw
+  --start-position: -14vw;
+  --start-rotation: 0deg;
+  --logo-column: calc(2 * var(--grid-column)); // 24.99vw
+  --empty-column: calc(1.5 * var(--grid-column)); // 24.99vw
   --main-column: calc(7 * var(--grid-column));  // 58.31vw
 
-  --header-top-height: 30.1vh;
-  --header-bottom-height: 70.1vh;
+  --header-top-height: 25vh;
+  --header-bottom-height: 75vh;
 
   --flow-space: 1em;
 
-  --section-space: 5em; // 50px / 10px = 5em
+  --section-padding: 6em;
 }

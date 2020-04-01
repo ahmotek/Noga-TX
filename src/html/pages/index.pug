@@ -5,69 +5,122 @@ block content
   - var contactButtonText = 'Contact Us';
 
   main#main.main
-    a.button.button--primary(href="mailto:info@noga-tx.com") #{contactButtonText}
+    block hero
+      include ../includes/hero-image
 
-    svg.logo.logo--main
-      title #{pageTitle} logo
-      use(xlink:href="#nogaLogo")
+    aside.main__aside
+      a.button.button--primary(href="mailto:info@noga-tx.com") #{contactButtonText}
 
     section.main__section
+      svg.logo.logo--main
+        title #{pageTitle} logo
+        use(xlink:href="#nogaLogo")
+
       h1 Developing Gene Therapies
         br
         | to transform the life of patients
         br
         | and their families.
 
+    section.main__section
       p #{pageTitle} was established in 2019 in memory 
         br
         | of Noga Baumatz with a mission to develop gene therapies 
         br
         | for Primary Immune Deficiencies (PID).
 
-    section.main__section
-      h2 The Need
+      figure
+        img(src="../../assets/images/noga-family-filters.jpg")
 
-      p There are over 300 recognized Primary Immune Deficiencies. About 1 in 500 people in the United States are born with a primary immune deficiency.
+    section.main__section
+      h2 What are PID's
+
+      p #[b Primary Immune Deficiency] diseases are rare, genetic disorders that impair the immune system. Without a functional immune response, people with PIDs may be subject to chronic, debilitating infections.
+      
+      figure
+        img(src="" alt="")
+        figcaption About 1 in 500 people in the United States are born with a Primary Immune Deficiency.
 
       p In the past decade, gene therapies have shown encouraging results in several PIDs. #[b However, most remain without effective treatment options.] 
 
-    section.main__section
-      h2 Technology
-
-      p Lentiviral autologous gene therapy to date, 11 years after the first Adenosine Deaminase Deficiency patient was treated, more than 200 patients with Primary Immune Deficiencies have been treated with lentiviral vectors #[b with no reports of major adverse events] or insertion mutagenesis. 
-
-      p #[mark We develop lentiviral vectors that are computationally and experimentally tailored for each indication.]
+      figure
+        img(src="" alt="")
+        figcaption There are over 400 recognized Primary Immune Deficiencies but only 5 of them have Gene Therapy programs. 
 
     section.main__section
-      h2 R&amp;D
+      h2 Why Gene Therapy?
 
-      p Noga Tx is currently developing a lentiviral vector for our lead indication. #[b This project is done in collaboration with a major Israeli medical center with 30 patients under care.] We aim to reach a compassionate use approval within the next 24 month.
+      p Current standard of care for most PID's is Hematopoeitic Stem Cell Transplant (HSCT) which has many drawbacks that are overcome by Gene Therapy.
+      
+      .c-table.c-table--2cols.c-table--collapse
+        .c-table-cell.c-table-cell--head.c-table-cell--dark(style="order:0;")
+          h3 HSCT
+        .c-table-cell.c-table-cell--light(style="order:1;") Harsh conditioning (radiation, chemotherapy)
+        .c-table-cell.c-table-cell--light(style="order:2;") Requires a matched donor
+        .c-table-cell.c-table-cell--light(style="order:3;") Poor life quality due to Graft Vs Host Disease (GVHD), and other disease specific complications
+        .c-table-cell.c-table-cell--light(style="order:4;") Many patients remain dependent on Immunoglobulin replacement therapy even after transplant
+        .c-table-cell.c-table-cell--light(style="order:5;") Often a 2nd HSCT is required due to poor immune system reconstitution
+        .c-table-cell.c-table-cell--light(style="order:6;") Overall survival rate of 60-75%
+
+        .c-table-cell.c-table-cell--head.c-table-cell--dark(style="order:0;")
+          h3 Gene Therapy
+        .c-table-cell.c-table-cell--light(style="order:1;") Reduced or no conditioning treatment
+        .c-table-cell.c-table-cell--light(style="order:2;") Using own patient’s cells
+        .c-table-cell.c-table-cell--light(style="order:3;") Normal life quality
+        .c-table-cell.c-table-cell--light(style="order:4;") Full restoration of the immune system removes the need for Immunoglobulin replacement therapy
+        .c-table-cell.c-table-cell--light(style="order:5;") One-time curative treatment
+        .c-table-cell.c-table-cell--light(style="order:6;") No failures recorded at the last decade
+        
+    section.main__section
+      h2 The Therapy
+      
+      p #[b In Lentiviral Autologous Gene Therapy, stem cells are collected from the patient, mutations are corrected using lentiviruses and then the repaired cells are re-introduced into the patient.]
+
+      ul.list
+        li.list__item 200+ patients with PID's have been successfully treated;
+        li.list__item 12 years in the clinic with no reports of major adverse events;
+        li.list__item Currently dozens of ongoing clinical trials;
+        li.list__item New therapies soon to enter the market.
+
+    section.main__section
+      h2 Lead Indication
+
+      p Noga Tx is currently developing a lentiviral vector for our lead indication.
+      
+      p This project is done in collaboration with #[b Schneider - Children's Medical Center] with 30 patients under care. We aim to conduct a first-in-human trial in dozens of XLA patients at Schneider. 
+
       p Our pipeline includes two additional PIDs in the evaluation phase.
 
     section.main__section.main__section--low-contrast
-      p #[b Team of professional scientists] coming from leading institutions and brining industry experience in cell and gene therapy.
+      h2 Our Team
+
+      p Our scientists come from leading academic institutions and bring industry experience in cell and gene therapy.
 
       ul.team-list
         li.team-list__item
           .team-list__image
+            img(src="../../assets/images/team/NoamD.jpg")
           b Dr. Noam Diamant 
           br
-          | CEO/CSO
+          | Co-founder &amp; CEO
         
         li.team-list__item
           .team-list__image
+            img(src="../../assets/images/team/NoamB.jpg")
           b Noam Baumatz
           br
           | Co-founder
         
         li.team-list__item
           .team-list__image
+            img(src="../../assets/images/team/LironE.jpg")
           b Dr. Liron Elkouby
           br
           | Head of Discovery
 
         li.team-list__item
           .team-list__image
+            img(src="../../assets/images/team/LiatP.jpg")
           b Dr. Liat Pinkas
           br
           | Head of Development
@@ -80,24 +133,20 @@ block content
     section.main__section
       h2 Investors
 
-      p #[b Seed investment was received from Lonza, a global leader in biologics manufacturing and cell &amp; gene therapy.]
+      p Ongoing research and development collaboration with Lonza, a global leader in biologics manufacturing and Cell &amp; Gene Therapy, including:
 
-      p The investment includes cash and in-kind service for process development in Lonza’s Cocoon#[sup TM] automated cell therapy system and GMP manufacturing of GMP lentiviral vectors for the clinical trial.
-
-    section.main__section
-      h2 Intellectual property
-
-      p Freedom-to-operate for 3rd generation lentiviral vectors combined with proprietary IP of our vector design.
+      ul.list
+        li.list__item Cash investment;
+        li.list__item Development in Lonza's Cocoon#[sup TM] automated cell therapy system;
+        li.list__item Commitment to manufacturing lentiviral vectors.
 
     section.main__section.main__section--low-contrast
-      h2 Value proposition
+      h2 Business Opportunity
 
-      p In recent years value creation of lentiviral gene therapy companies was driven by Proof-of-Concept (PoC) studies in few patients.
+      p Success of lentiviral gene therapy companies in previous years was based on results with small numbers of patients.
 
-      h3 Clear efficacy in small trials lead to significant value creation.
+      p Positive results in early trials were value drivers as can be seen by the increase of the market value of the following companies:
 
-      //- section.main__section
-      p #[mark We are currently seeking to partner with additional investors that will take us to a first-in-human trial in Israel.]
+      mark We are currently seeking to partner with additional investors that will take us to a first-in-human trial in Israel.
 
-    block video
-      include ../includes/video-white
+    

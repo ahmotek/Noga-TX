@@ -24,7 +24,20 @@
     background-color: $primary-color;
   }
 
+  .button {
+    position: absolute;
+    bottom: calc(2 * var(--flow-space));
+    left: 50%;
+    opacity: var(--logo-opacity);
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
   &--show {
     --logo-opacity: 1;
+
+    .button {
+      pointer-events: auto;
+    }
   }
 }

@@ -1,13 +1,13 @@
 //- This file contains all @font-face declarations.
 @font-face {
   font-family: 'Barlow';
-  font-weight: map-get($text-font-weight, normal);
+  font-weight: map-get($text-font-weight, regular);
   src: url($font-url + 'Barlow/Barlow-Regular.ttf');
 }
 
 @font-face {
   font-family: 'Barlow';
-  font-weight: map-get($text-font-weight, bold);
+  font-weight: map-get($text-font-weight, normal);
   src: url($font-url + 'Barlow/Barlow-Medium.ttf');
 }
 

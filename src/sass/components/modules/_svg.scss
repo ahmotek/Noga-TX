@@ -1,14 +1,10 @@
 .logo {
-  width: 20em;
-  height: 10em;
-  font-size: var(--logo-font);
-  
   &--header {
-    --logo-font: .75em;
-
     position: relative;
     top: 50%;
     left: 50%;
+    width: 66.66%;
+    height: 50%;
     color: $white;
     transform: translate(-50%, -50%);
     opacity: var(--logo-opacity);
@@ -16,8 +12,100 @@
   }
 
   &--main {
-    --logo-font: 1em;
-    
+    width: 18em;
+    height: 9em;
     color: $primary-color;
+  }
+}
+
+#DNA {
+  width: 60vw;
+  perspective: 600px;
+  
+  .fill-gradient {
+    animation: rotateItem 4s infinite linear;
+    transform-origin: center center;
+    transform-style: preserve-3d;
+
+    &--forward {
+      fill:url(#Gradient01);
+    }
+
+    &--backward {
+      fill:url(#Gradient02);
+    }
+  }
+  
+  .fill {
+    animation: rotateItem 4s infinite linear;
+    transform-origin: center center;
+    transform-style: preserve-3d;
+
+    &--dark{
+      fill:#003E6D;
+      animation-name: fillDark;
+      animation-duration: 2s;
+      animation-delay: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: linear;
+    }
+
+    &--light{
+      fill:#0476DC;
+      animation-name: fillLight;
+      animation-duration: 2s;
+      animation-delay: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: linear;
+    }
+  }
+
+  .circle {
+
+    &--front {
+      
+    }
+
+    &--back {
+      
+    }
+  }
+}
+
+.use-test {
+  .fill {
+
+    &--dark{
+      color:#003E6D;
+    }
+
+    &--light{
+      color:#0476DC;
+    }
+  }
+}
+
+@keyframes fillDark {
+  to {
+    fill:#0476DC;
+  }
+}
+
+@keyframes fillLight {
+  to {
+    fill:#003E6D;
+  }
+}
+
+@keyframes rotateItem {
+  from {
+    backface-visibility: visible;
+    transform: rotateX(0);
+  }
+  to {
+    backface-visibility: hidden;
+    transform: rotateX(-360deg);
   }
 }

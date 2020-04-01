@@ -61,18 +61,23 @@ module.exports = {
             options: {
               esModule: true,
               publicPath: '../',
-              hmr: process.env.NODE_ENV === 'development'
+              hmr: process.env.NODE_ENV === 'development',
             },
           },
           'css-loader',
+          'postcss-loader',
           'sass-loader'
         ],
       },
       {
         test: /\.pug$/,
 
-        use: [
+        loader: [
           "pug-loader",
+          // "file-loader?name=./[name].html",
+          "extract-loader",
+          "html-loader",
+          "pug-html-loader"
         ]
       },
       {
@@ -129,8 +134,8 @@ module.exports = {
       // inject: false
     }),
     new HtmlWebpackPlugin({
-      filename: 'contact.html', // HTML file name
-      template: './src/html/pages/contact.pug', // file template to be compiled
+      filename: 'dna.html', // HTML file name
+      template: './src/html/pages/dna.pug', // file template to be compiled
       // inject: false
     }),
 

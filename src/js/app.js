@@ -10,4 +10,5 @@ console.log('process.env.NODE_ENV', process.env.NODE_ENV);
 // import generic JS files
 // import './app/favicons.js';
 import './app/header-animation.js';
+// import './app/hero-animation.js'; - motion does not look good on the design
 // import './app/video.js';

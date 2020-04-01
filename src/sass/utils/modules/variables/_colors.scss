@@ -22,7 +22,7 @@ $anchor-color-hover-negative: rgba($light-grey, .5) !default;
 
 $button-background: $primary-color !default;
 
-$low-contrast-background: transparentize($light-grey, .1);
+$low-contrast-background: transparentize($vivid-blue, .95); 
 
 $text-shadow: 0 0 10px $text-color;
 $heading-shadow: 0 0 10px $primary-color, 0 0 20px $primary-color, 0 0 30px $primary-color, 0 0 40px $primary-color;
